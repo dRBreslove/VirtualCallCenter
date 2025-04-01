@@ -11,8 +11,12 @@ import dotenv from 'dotenv';
 import WebSocket from 'ws';
 import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
+import connectDB from './config/db.js';
 
 dotenv.config();
+
+// Connect to MongoDB
+connectDB();
 
 const app = express();
 const server = http.createServer(app);
